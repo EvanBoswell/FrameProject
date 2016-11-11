@@ -1,1 +1,37 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
+class FrameOne implements ItemListener{
+	
+	FrameOne(){
+		JFrame frame = new JFrame("Frame One");
+		JRadioButton buttons[] = {new JRadioButton("Circles", false), new JRadioButton("Regions", false), new JRadioButton("Labels", false)};
+		frame.setSize(200,200);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		for(JRadioButton button : buttons){
+			frame.add(button);
+			button.addItemListener(this);
+		}
+		frame.setLayout(new FlowLayout());
+		frame.setVisible(true);
+	}
+
+	public void itemStateChanged(ItemEvent e){
+		JRadioButton sel = (JRadioButton)e.getItemSelectable();
+		String text = sel.getText();
+		if(sel.isSelected()){
+			if(text.equals("Circles")){
+				// open frame 2
+			}else if(text.equals("Regions")){
+				// open frame 3
+			}else if(text.equals("Labels")){
+				FrameFour b = new FrameFour();
+			}
+		}
+	}
+	
+	public static void main(String[] args){
+		FrameOne a = new FrameOne();
+	}
+}
