@@ -35,3 +35,29 @@ class FrameOne implements ItemListener{
 		FrameOne a = new FrameOne();
 	}
 }
+
+class FrameFour implements ActionListener{
+	private int count;
+	private Panel pane;
+	private String[] txt = {"Too expensive", "Too flimsy", "Too bulky", "Too feminine", "Too masculine"};
+	
+	FrameFour(){
+		JFrame frame = new JFrame("Frame Four");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(600, 600);
+		pane = new Panel();
+		JButton button = new JButton("");
+		button.addActionListener(this);
+		frame.add(button, BorderLayout.CENTER);
+		frame.add(pane, BorderLayout.EAST);
+		frame.setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		if(count < 5){
+				pane.add(new JLabel(txt[count]));
+				pane.revalidate();
+		}
+		count++;
+	}	
+}
