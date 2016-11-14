@@ -1,1 +1,115 @@
 
+import java.util.*;
+import java.awt.*; 
+import java.awt.event.*;
+import javax.swing.*;
+public class JFrameThree extends JFrame implements ActionListener{
+    Random rand = new Random ();
+    static JButton ColorButton = new JButton ();
+    static JButton center = new JButton ();
+    static JButton north = new JButton ();
+    static JButton south = new JButton ();
+    static JButton west = new JButton ();
+    static JButton east = new JButton ();
+    JFrameThree (){
+        north.setBackground(Color.white);
+        south.setBackground(Color.white);
+        west.setBackground(Color.white);
+        east.setBackground(Color.white);
+        north.setSize(200,200);
+        south.setSize(200,200);
+        west.setSize(200,200);
+        east.setSize(200,200);
+        ColorButton.setSize(100,100);
+        ColorButton.addActionListener(this);
+    }
+    public static void main (String [] args){
+        JFrameThree FrameThree = new JFrameThree ();
+        FrameThree.setLayout (new BorderLayout());
+        FrameThree.setSize (300, 300);
+        FrameThree.add(ColorButton,BorderLayout.CENTER);
+        FrameThree.add(north,BorderLayout.NORTH);
+        FrameThree.add(south,BorderLayout.SOUTH);
+        FrameThree.add(west,BorderLayout.WEST);
+        FrameThree.add(east,BorderLayout.EAST);
+        FrameThree.setVisible (true);
+        FrameThree.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    public void actionPerformed( ActionEvent e){  
+         int randNUM = rand.nextInt(28)+1;
+         switch (randNUM){
+             case (1):
+             north.setBackground(Color.blue);
+             break;
+             case (2):
+             south.setBackground(Color.blue);
+             break;
+             case (3):
+             west.setBackground(Color.blue);
+             break;
+             case (4):
+             east.setBackground(Color.blue);
+             break;
+             case (5):
+             north.setBackground(Color.red);
+             break;
+             case (6):
+             south.setBackground(Color.red);
+             break;
+             case (7):
+             west.setBackground(Color.red);
+             break;
+             case (8):
+             east.setBackground(Color.red);
+             break;
+             case (9):
+             north.setBackground(Color.green);
+             break;
+             case (10):
+             south.setBackground(Color.green);
+             break;
+             case (11):
+             west.setBackground(Color.green);
+             break;
+             case (12):
+             east.setBackground(Color.green);
+             break;
+             case (13):
+             north.setBackground(Color.black);
+             break;
+             case (14):
+             south.setBackground(Color.black);
+             break;
+             case (15):
+             west.setBackground(Color.black);
+             break;
+             case (16):
+             east.setBackground(Color.black);
+             break;
+             case (17):
+             north.setBackground(Color.white);
+             break;
+             case (18):
+             south.setBackground(Color.white);
+             break;
+             case (19):
+             west.setBackground(Color.white);
+             break;
+             case (20):
+             east.setBackground(Color.white);
+             break;
+             case (21):
+             north.setBackground(Color.yellow);
+             break;
+             case (22):
+             north.setBackground(Color.yellow);
+             break;
+             case (23):
+             north.setBackground(Color.yellow);
+             break;
+             case (24):
+             north.setBackground(Color.yellow);
+             break;
+            }
+        }
+}
